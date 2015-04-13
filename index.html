@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Responsive Design</title>
+<!-- STYLESHEETS -->
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+<!-- FONTS -->
+	<link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:400,200' rel='stylesheet' type='text/css'>
+	
+	<link href='http://fonts.googleapis.com/css?family=Raleway|Droid+Sans:700' rel='stylesheet' type='text/css'>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</head>
+<body>
+	<nav>
+		<div>
+			<img class="menu-icon" src="imgs/menu-icon.jpg"></img>
+			<ul class="nav-list">
+				<li><a class="grids" href="#grids">Fluid Grids</a></li>
+				<li><a class="break" href="#break">Breakdown</a></li>
+				<li><a class="context" href="#context">Context</a></li>
+				<li><a class="ems" href="#ems">EMs</a></li>
+				<li><a class="fimages" href="#fimages">Fluid Images</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<header class="page" id="grids">
+		<h1>Fluid Grids</h1>
+	</header>
+
+	<article class="first-entry" id="break">
+		<div class="page">
+			<h2>Fluid Grids, a Break Down</h2>
+			<h3 class="details">how this all works</h3>
+			<section class="content">
+				<div class="main">
+					<p>Fluid Grids are based upon the idea that with minimal HTML/CSS you can build a site that re-flows automagically. It's about making mobile-friendly and mobile-first designs that need very few position tweaks. If any at all.</p>
+				</div>
+			</section>
+		</div>
+	</article>
+
+	<article class="blockquote">
+		<div class="page">
+			<h3>target &divide; context = result</h3>
+		</div>
+	</article>
+
+	<article class="second-entry" id="context">
+		<div class="page">
+			<h2>It's All About Context</h2>
+			<h3 class="details">it really is everything</h3>
+			<section class="content">
+				<div class="main">
+					<p>To achieve this, we use the simple formula above. <b>Target width</b> divided by the <b>width of the container</b> which equals the <b>result in ems</b> (relative units) that we want.</p>
+				</div>
+			</section>
+		</div>
+	</article>
+
+	<article class="third-entry" id="ems">
+		<div class="page">
+			<h2>ems - The Relative Unit</h2>
+			<h3 class="details">subjectivity, subjectivity</h3>
+			<section class="content">
+				<div class="main">
+					<p>There are many <a href="http://www.w3schools.com/cssref/css_units.asp">relative units</a> available to designers. Few are as versatile as the <b>em</b> however. Primarily designed for <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-size">use with fonts</a> <b>ems</b> can also be used automagically adjusting <a href="https://css-tricks.com/why-ems/">units for margins and paddings.</a></p>
+				</div>
+			</section>
+		</div>
+	</article>
+
+	<div class="fluid-images" id="fimages">
+		<header class="page">
+			<h1>Fluid Images</h1>
+		</header>
+	</div>
+
+	<article class="images">
+			<img src="imgs/1.jpg">
+			<p class="caption page">Fluid images are easily made by building a flexible container element and placing an <b>img</b> within it.</p>
+	</article>
+
+	<article class="images">
+		<img src="imgs/2.jpg">
+		<p class="caption page">The contained <b>img</b> should then have it's values set like this:</p>
+		<h3 class="blockquote page">img {max-width: 100%}</h3>
+	</article>
+
+	<article class="images">
+		<img src="imgs/3.jpg">
+		<p class="caption page">All of the above images are placed within an element, an <b>&lt;article&gt;</b> in this case, which has its width expressed in relative units (precentages or ems). The <b>&lt;img&gt;</b> element is then set in the stylesheet to have a value of <b><i>max-width: 100%</i></b> </p>
+	</article>
+
+	<article class="images">
+		<img src="imgs/4.jpg">
+		<p class="caption page">Go ahead! Try resizing the browser and seeing what happens.</p>
+	</article>
+
+	<article class="images">
+		<img src="imgs/m1.jpg" id="m1">
+		<p id="m1-text">Lorem</p>
+		<img src="imgs/m1.jpg" id="m2">
+		<img src="imgs/m1.jpg" id="m3">
+		<img src="imgs/m1.jpg" id="m4">
+		<p class="caption page">The Mauritius Islands are much nicer than cold, grey Nebraska.</p>
+	</article>
+
+
+	<form action="">
+	  <label for="GET-name">Name:</label>
+	  <input id="GET-name" type="text" name="name">
+	  <input type="submit" value="Save">
+	</form>
+
+	<script type="text/javascript">
+		$(function() {
+			$nav = $('.nav-list');
+
+			$('.menu-icon').click(function(){
+				$nav.slideToggle();
+			});
+		});
+
+	</script>
+
+	<script type="text/javascript">
+		$(function(){
+			$('a.break').click(function(){
+				$('html, body').animate({scrollTop:$('#break').offset().top}, 1000);
+			});
+
+			$('a.grids').click(function(){
+				$('html, body').animate({scrollTop:$('#grids').offset().top}, 1000);
+			});
+
+			$('a.context').click(function(){
+				$('html, body').animate({scrollTop:$('#ems').offset().top}, 1000);
+			});
+
+			$('a.fimages').click(function(){
+				$('html, body').animate({scrollTop:$('#fimages').offset().top}, 1000);
+			});
+		});
+	</script>
+
+</body>
+</html>
